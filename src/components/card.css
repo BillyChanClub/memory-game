@@ -1,0 +1,48 @@
+.card{
+    --duration: 150ms;
+    position: relative;
+    /* overflow: hidden; */
+    box-sizing: border-box;
+    perspective: 800px;
+}
+
+.card > div{
+    perspective: 1800px;
+    transform: rotateX(3deg);
+}
+
+.card.selected img{
+    --tw-border-opacity: 1;
+    border-color: rgb(37 99 235 / var(--tw-border-opacity))
+}
+
+.card img{
+    transition: transform var(--duration);
+    max-width: 100%;
+    /* border-radius: 7px; */
+    border: calc(1vmin/2) solid transparent;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px #111;
+}
+
+.card .front{
+    position: absolute;
+    transform: rotateY(-90deg);
+}
+
+.card .front.flipped{
+    transform: rotateY(0deg);
+    transition-delay: var(--duration);
+}
+
+.card .back{
+    transform: rotateY(0deg);
+    transition-delay: var(--duration);
+
+}
+
+.card .back.flipped{
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+
+}
